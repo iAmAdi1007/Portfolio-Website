@@ -10,6 +10,27 @@ header {
   position: relative;
 }
 
+.username{
+  font-size: 2rem;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.cursor__animation{
+  display: inline-block;
+  width: 2px;
+  height: 1.5rem;
+  background-color: white;
+  margin-left: 1px;
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink{
+  50% {
+    opacity: 0;
+  }
+}
+
 .cta {
   margin-top: 2.5rem;
   display: flex;

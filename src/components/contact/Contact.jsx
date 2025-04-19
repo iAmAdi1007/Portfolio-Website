@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import "./contact.css";
 import { MdOutlineMail } from 'react-icons/md';
 import { FaFacebookMessenger, FaWhatsapp } from 'react-icons/fa';
 import { useRef } from 'react';
 import emailjs from 'emailjs-com';
 
-const Contact = () => {
+const Contact = forwardRef((_, ref) => {
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -21,7 +21,7 @@ const Contact = () => {
     e.target.reset();
   };
   return (
-    <section id="contact">
+    <section id="contact" ref={ref}>
       <h5>Get in Touch</h5>
       <h2>Contact Me</h2>
 
@@ -56,6 +56,6 @@ const Contact = () => {
       </div>
     </section>
   )
-}
+});
 
 export default Contact

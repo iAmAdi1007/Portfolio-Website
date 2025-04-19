@@ -1,20 +1,45 @@
 import React from 'react';
 import './nav.css';
-import {AiOutlineHome, AiOutlineUser} from 'react-icons/ai';
-import {BsJournalBookmarkFill} from 'react-icons/bs';
-import {RiSuitcaseLine} from 'react-icons/ri'
-import {BiMessageSquareDetail} from 'react-icons/bi'
+import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai';
+import { BsJournalBookmarkFill } from 'react-icons/bs';
+import { RiSuitcaseLine } from 'react-icons/ri'
+import { BiMessageSquareDetail } from 'react-icons/bi'
 import { useState } from 'react';
 
-const Nav = () => {
-  const [active, setActive] = useState("#");
+const Nav = ({ scrollToComponent }) => {
+  const [active, setActive] = useState('HOME');
+  const handleActivate = (val) => {
+    setActive(val);
+    scrollToComponent(val);
+  }
+
+  const NAV_ITEMS = [
+    {
+      navValue: 'HOME',
+      icon: <AiOutlineHome />
+    },
+    {
+      navValue: 'ABOUT',
+      icon: <AiOutlineUser />
+    },
+    {
+      navValue: 'EXPERIENCE',
+      icon: <BsJournalBookmarkFill />
+    },
+    {
+      navValue: 'PORTFOLIO',
+      icon: <RiSuitcaseLine />
+    },
+    {
+      navValue: 'CONTACT',
+      icon: <BiMessageSquareDetail />
+    }
+  ]
   return (
     <nav>
-      <a href="#" onClick={()=> setActive('#')} className={active === "#" ? 'active' : ''}><AiOutlineHome/></a>
-      <a href="#about" onClick={()=> setActive('#about')} className={active === "#about" ? 'active' : ''}><AiOutlineUser/></a>
-      <a href="#experience" onClick={()=> setActive('#experience')} className={active === "#experience" ? 'active' : ''}><BsJournalBookmarkFill/></a>
-      <a href="#portfolio"><RiSuitcaseLine/></a>
-      <a href="#contact" onClick={()=> setActive('#contact')} className={active === "#contact" ? 'active' : ''}><BiMessageSquareDetail/></a>
+      {NAV_ITEMS.map((navItem, index) => {
+        return <button onClick={() => handleActivate(navItem.navValue)} key={index} className={`${active === navItem.navValue ? 'active' : ''}`}>{navItem.icon}</button>
+      })}
     </nav>
   )
 }

@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import './about.css';
 import ME from '../../assets/about.png';
 import { FiAward } from 'react-icons/fi';
 import { FaUsers } from 'react-icons/fa'
 import { VscFolderLibrary } from 'react-icons/vsc'
 
-const About = () => {
+const About = forwardRef((_, ref) => {
   return (
-    <section id="about">
+    <section id="about" ref={ref}>
       <h5>Get to Know</h5>
       <h2>About Me</h2>
       <div className="container about__container">
@@ -21,12 +21,12 @@ const About = () => {
             <article className='about__card'>
               <FiAward className='about__icon' />
               <h5>Experience</h5>
-              <small>4+ Years</small>
+              <small>Have 4.5+ years of Frontend Development Experience in evolving tech stacks</small>
             </article>
             <article className='about__card'>
               <FaUsers className='about__icon' />
               <h5>Clients</h5>
-              <small>3 Clients in Varying Sectors</small>
+              <small>Have worked for various clients across varying domains viz Apple INC, Verizon India, Deutsche Borse etc.</small>
             </article>
             <article className='about__card'>
               <VscFolderLibrary className='about__icon' />
@@ -42,6 +42,6 @@ const About = () => {
       </div>
     </section>
   )
-}
+});
 
 export default About

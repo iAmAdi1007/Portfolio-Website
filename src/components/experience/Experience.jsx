@@ -2,7 +2,7 @@ import React from 'react'
 import './experience.css';
 import { BsFillPatchCheckFill } from 'react-icons/bs';
 
-const Experience = () => {
+const Experience = React.forwardRef((_, ref) => {
   const SKILLS_ARRAY = [
     {
       skill: 'React JS',
@@ -73,9 +73,9 @@ const Experience = () => {
     } 
   ]
   return (
-    <section id="experience">
+    <section id="experience" ref={ref}>
       <h5>What skills I have</h5>
-      <h2>My Experience</h2>
+      <h2>Technical Skills</h2>
       <div className="container experience__container">
         <div className="experience__frontend">
           <h3>Frontend Development</h3>
@@ -94,7 +94,7 @@ const Experience = () => {
           <h3>Some Other Skills and Technologies</h3>
           <div className="experience__content">
             {OTHER_SKILLS_ARRAY.map((skill, index) => (
-              <article className='experience__details'>
+              <article className='experience__details' key={index}>
               <BsFillPatchCheckFill className='experience__details-icon' />
               <div>
                 <h4>{skill.skill}</h4>
@@ -107,6 +107,6 @@ const Experience = () => {
       </div>
     </section>
   )
-}
+});
 
 export default Experience

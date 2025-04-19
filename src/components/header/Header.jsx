@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import CTA from './CTA';
 import './header.css';
 import ME from '../../assets/me.png';
 import HeaderSocials from './HeaderSocials';
 
-const Header = () => {
+const Header = React.forwardRef((_, ref) => {
   const USER_NAME = "Aditya Pratap";
-  const PROFESSION_ARRAY = [
+  const PROFESSION_ARRAY = useMemo(() =>[
     'Front-End Developer',
     'Web Developer',
     'UI Developer'
-  ]
+  ], [])
 
   const [index, setIndex] = useState(0);
   const [name, setName] = useState('');
@@ -68,7 +68,7 @@ const Header = () => {
 
 
   return (
-    <header>
+    <header ref={ref}>
       <div className="container header__container">
         <h4>Hello I'm</h4>
         <h1 className='username'>{name} <span className='cursor__animation' /></h1>
@@ -82,6 +82,6 @@ const Header = () => {
       </div>
     </header>
   )
-}
+});
 
 export default Header

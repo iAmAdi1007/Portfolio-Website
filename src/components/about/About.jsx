@@ -2,10 +2,39 @@ import React, { forwardRef } from 'react'
 import './about.css';
 import ME from '../../assets/about.png';
 import { FiAward } from 'react-icons/fi';
-import { FaUsers } from 'react-icons/fa'
+import { FaUsers } from 'react-icons/fa';
+import { GoDotFill } from 'react-icons/go';
 import { VscFolderLibrary } from 'react-icons/vsc'
 
 const About = forwardRef((_, ref) => {
+
+  const CERTIFICATES_ARRAY = [
+    {
+      title: "FE Developer",
+      link: "https://www.hackerrank.com/certificates/cf0d1f915dfc"
+    },
+    {
+      title: "Frontend Expert",
+      link: "https://certificate.algoexpert.io/FE-9d87f33d48"
+    },
+    {
+      title: "React JS",
+      link: "https://www.hackerrank.com/certificates/ba7c8d779d4d"
+    },
+    {
+      title: "JavaScript Basics",
+      link: "https://www.hackerrank.com/certificates/cd300095bd06"
+    },
+    {
+      title: "Problem Solving",
+      link: "https://www.hackerrank.com/certificates/9f04c57f4f14"
+    },
+    {
+      title: "Product Developer",
+      link: "https://www.linkedin.com/in/aditya-pratap-81063a107/overlay/1635522560742/single-media-viewer/?profileId=ACoAABr38wwBHzEUJ2Uoz43N7o16Mz7mp2-6VB8"
+    }
+  ]
+
   return (
     <section id="about" ref={ref}>
       <h5>Get to Know</h5>
@@ -30,12 +59,24 @@ const About = forwardRef((_, ref) => {
             </article>
             <article className='about__card'>
               <VscFolderLibrary className='about__icon' />
-              <h5>Projects</h5>
-              <small>4+ Completed Projects</small>
+              <h5>Certifications</h5>
+              {
+                CERTIFICATES_ARRAY.map((item, index) => {
+                  return (
+                    <div key={index} className='certificate__container'>
+                      <GoDotFill className='certificate__point'/>
+                      <a href={item.link} target='_blank' rel="noreferrer">
+                        <small>{item.title}</small>
+                      </a>
+                    </div>
+                  )
+                })
+              }
+              <h6 style={{marginTop: '1rem'}}>(Click each to see)</h6>
             </article>
           </div>
 
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, illum? Delectus porro quisquam cupiditate corrupti cumque cum! Dicta facilis quo rem fuga sapiente ipsa, soluta vero temporibus, quisquam, id maiores voluptate dolor nisi neque aliquid?</p>
+          <p>Hey There! Glad you stopped by.<br /> Now that you already have an understanding of my work/domain, I want to let you know more about what skills I have & whether I will be a good fit as a candiate you want to have work with you so do remember to explore other sections as well or let's talk..</p>
 
           <a href="#contact" className='btn btn-primary'>Let's talk</a>
         </div>

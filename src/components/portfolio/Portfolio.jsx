@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import './portfolio.css';
-import { GoDotFill } from "react-icons/go";
+import { GoDotFill } from 'react-icons/go';
 import { BsFillPatchCheckFill } from 'react-icons/bs';
 
 const Portfolio = React.forwardRef((_, ref) => {
@@ -51,7 +51,7 @@ const Portfolio = React.forwardRef((_, ref) => {
                   ...prev,
                   [groupIndex]: [...(prev[groupIndex] || []), item],
                 }));
-              }, index * 800);
+              }, index * 900);
               timeouts.push(timeoutId);
             });
           });

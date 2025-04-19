@@ -32,7 +32,7 @@
 .about__cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5em;
+  gap: 1em;
 }
 
 .about__card {
@@ -42,6 +42,10 @@
   padding: 2rem;
   text-align: center;
   transition: var(--transition);
+}
+
+.about__cards>:last-child{
+  padding: 2rem 1rem;
 }
 
 .about__card:hover {
@@ -68,6 +72,22 @@
 .about__content p {
   margin: 2rem 0 2.6rem;
   color: var(--color-light);
+}
+
+.certificate__container{
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.certificate__container:hover{
+  color: white;
+}
+
+.certificate__point{
+  font-size: 0.7rem;
+  color: var(--color-primary)
 }
 
 @media screen and (max-width: 1024px) {

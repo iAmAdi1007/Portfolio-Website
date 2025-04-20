@@ -3,7 +3,7 @@ import "./contact.css";
 import { MdOutlineMail } from 'react-icons/md';
 import { FaFacebookMessenger, FaWhatsapp } from 'react-icons/fa';
 import { useRef } from 'react';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 const Contact = forwardRef((_, ref) => {
   const form = useRef();

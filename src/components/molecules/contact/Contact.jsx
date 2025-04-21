@@ -1,12 +1,14 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useState } from 'react'
 import "./contact.css";
 import { MdOutlineMail } from 'react-icons/md';
 import { FaFacebookMessenger, FaWhatsapp } from 'react-icons/fa';
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import Notification from '../../atoms/Notification';
 
 const Contact = forwardRef((_, ref) => {
   const form = useRef();
+  const [showNotification, setShowNotification] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -14,6 +16,7 @@ const Contact = forwardRef((_, ref) => {
     emailjs.sendForm('service_uhs2y5x', 'template_m24ndrb', form.current, 'Dk7qLIKmE6q6KptlV')
       .then((result) => {
         console.log(result.text);
+        setShowNotification(true);
       }, (error) => {
         console.log(error.text);
       });
@@ -26,6 +29,15 @@ const Contact = forwardRef((_, ref) => {
       <h2>Contact Me</h2>
 
       <div className="container contact__container">
+        {true && 
+          <Notification
+            title={'Success!'}
+            message={'Email Sent Sucessfully!'}
+            timeout={2}
+            showNotification={showNotification}
+            setShowNotification={setShowNotification}
+          />
+        }
         <div className="contact__options">
           <article className="contact__option">
             <MdOutlineMail className='contact__option-icon' />

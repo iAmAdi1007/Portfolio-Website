@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import './portfolio.css';
-import { GoDotFill } from 'react-icons/go';
 import { BsFillPatchCheckFill } from 'react-icons/bs';
 
 const Portfolio = React.forwardRef((_, ref) => {
@@ -91,8 +90,7 @@ const Portfolio = React.forwardRef((_, ref) => {
                   {group.items.map((item, itemIndex) => {
                     return (
                       <div className={`project__work__container fade-in-item ${visibleItems[groupIndex] && visibleItems[groupIndex].includes(item) ? 'fade-in' : ''}`} key={itemIndex}>
-                        <GoDotFill className='client__icon' />
-                        <small>{item}</small>
+                        <small className='project__text'>{item}</small>
                       </div>
                     )
                   })}

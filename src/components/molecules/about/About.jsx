@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import './about.css';
-import ME from '../../assets/about.png';
+import ME from '../../../assets/about.png';
 import { FiAward } from 'react-icons/fi';
 import { FaUsers } from 'react-icons/fa';
 import { GoDotFill } from 'react-icons/go';

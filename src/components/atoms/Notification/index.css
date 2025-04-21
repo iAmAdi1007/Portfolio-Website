@@ -1,0 +1,69 @@
+.notification__container {
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  background: var(--color-primary);
+  width: 15rem;
+  height: 3rem;
+  padding: 0.2rem 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification__container::after {
+  content: "";
+  height: 4px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background-color: white;
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 2s ease-out;
+}
+.notification__container.progress__full::after{
+  transform: scaleX(0);
+}
+
+.notification__text {
+  flex-basis: 90%;
+}
+
+.notification__title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+}
+
+.notification__message {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.notification__cancel {
+  flex-basis: 10%;
+  font-weight: bold;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .notification__container {
+    width: 7rem;
+    max-height: 2.5rem;
+    top: 0;
+    right: 0;
+    padding: 0.2rem;
+    opacity: 0.8;
+  }
+
+  .notification__title {
+    font-size: 0.8rem;
+  }
+
+  .notification__message {
+    font-size: 0.5rem;
+  }
+}

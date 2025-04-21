@@ -1,0 +1,56 @@
+.project__details__container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.portfolio__container {
+  background: var(--color-bg-variant);
+  padding: 2.4rem 5rem;
+  border-radius: 2rem;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.client__icon {
+  color: var(--color-primary);
+}
+
+.client__container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.project__work__container {
+  margin-left: 2rem;
+  position: relative;
+}
+
+.project__text::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  border-radius: 100%;
+  left: -10px;
+  top: 12px;
+  background-color: var(--color-primary);
+}
+
+.fade-in-item {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.fade-in-item.fade-in {
+  opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .portfolio__container {
+    width: 60%;
+    padding: 2rem 1rem;
+  }
+}

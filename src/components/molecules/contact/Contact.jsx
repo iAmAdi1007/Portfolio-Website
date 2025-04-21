@@ -29,7 +29,7 @@ const Contact = forwardRef((_, ref) => {
       <h2>Contact Me</h2>
 
       <div className="container contact__container">
-        {true && 
+        {showNotification && 
           <Notification
             title={'Success!'}
             message={'Email Sent Sucessfully!'}

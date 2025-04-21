@@ -23,7 +23,7 @@ const Notification = ({ title, message, timeout, showNotification, setShowNotifi
     }, [showNotification])
 
 
-    return (true &&
+    return (showNotification &&
         <div className={`notification__container ${showLoader ? 'progress__full' : ''}`}>
             <div className="notification__text">
                 <div className="notification__title">{title}</div>

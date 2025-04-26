@@ -1,17 +1,12 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CTA from './CTA';
 import './header.css';
 import ME from '../../../assets/me.png';
 import HeaderSocials from './HeaderSocials';
+import data from '../../../data.json';
 
 const Header = React.forwardRef((_, ref) => {
-  const USER_NAME = "Aditya Pratap";
-  const PROFESSION_ARRAY = useMemo(() =>[
-    'Front-End Developer',
-    'Web Developer',
-    'UI Developer'
-  ], [])
-
+  const {userName : USER_NAME, professionTexts: PROFESSION_ARRAY} = data;
   const [index, setIndex] = useState(0);
   const [name, setName] = useState('');
   const [professionValue, setProfessionValue] = useState('');

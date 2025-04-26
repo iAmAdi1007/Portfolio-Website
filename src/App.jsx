@@ -14,36 +14,33 @@ const App = () => {
   const portfolioRef = useRef(null);
   const contactRef = useRef(null);
 
-  const scrollToView = (ref) => {
-    setTimeout(() => {
-      ref.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      })
-    }, 300)
-  }
-
-  const scrollTo = (value = "HOME") => {
-    let selectedRef;
-    if (value === 'HOME') {
-      selectedRef = headerRef;
-    } else if (value === "ABOUT") {
-      selectedRef = aboutRef;
-    } else if (value === "EXPERIENCE") {
-      selectedRef = expRef;
-    } else if (value === "CONTACT") {
-      selectedRef = contactRef;
-    } else if(value === "PORTFOLIO"){
-      selectedRef = portfolioRef;
-    } else {
-      selectedRef = headerRef;
+  const sectionRefs = [
+    {
+      title: "HOME",
+      ref: headerRef
+    },
+    {
+      title: "ABOUT",
+      ref: aboutRef
+    },
+    {
+      title: "EXPERIENCE",
+      ref: expRef
+    },
+    {
+      title: "CONTACT",
+      ref: contactRef
+    },
+    {
+      title: "PORTFOLIO",
+      ref: portfolioRef
     }
-    scrollToView(selectedRef);
-  }
+  ]
+  
   return (
     <>
       <Header ref={headerRef} />
-      <Nav scrollToComponent={scrollTo} />
+      <Nav sectionRefs={sectionRefs} />
       <About ref={aboutRef} />
       <Experience ref={expRef} />
       <Portfolio ref={portfolioRef}/>

@@ -1,27 +1,12 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './portfolio.css';
 import { BsFillPatchCheckFill } from 'react-icons/bs';
+import data from '../../../data.json';
 
 const Portfolio = React.forwardRef((_, ref) => {
   const [visibleItems, setVisibleItems] = useState({});
   const listRef = useRef(null);
-  const PROJECT_WORK = useMemo(() => [
-    {
-      title: 'For VERIZON',
-      items: [
-        'Worked on Page load optimization through Indexed DB approach to cater to multiple device load on the screen to improved user experience.',
-        'Worked pro actively with Backend Team in API design discussion and contract finalization to ensure reduced page load times as well as secured endpoints.',
-        'Worked on improving SRE(Site Reliability Engineering) score for the application through Next JS SSR(Server-Side Rendering) capabilities.'
-      ]
-    },
-    {
-      title: 'For APPLE',
-      items: [
-        'Developed and implemented dynamic forms for the application, ensuring alignment with both business and technical requirements.',
-        'Developed real time change of Feature Flags through dev tools to test various retailers on-the-go.'
-      ]
-    }
-  ], []);
+  const PROJECT_WORK = data.projectWork;
 
   const combinedRef = ref || listRef;
 
@@ -38,8 +23,7 @@ const Portfolio = React.forwardRef((_, ref) => {
       threshold: 0.1
     }
 
-    const handleIntersection = (entries, observer) => {
-      console.log('Observer callback triggered:', entries);
+    const handleIntersection = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           let timeouts = [];
@@ -82,7 +66,7 @@ const Portfolio = React.forwardRef((_, ref) => {
           <div className="portfolio__item-image">
             {PROJECT_WORK.map((group, groupIndex) => {
               return (
-                <>
+                <div key={`${group}-${groupIndex}`}>
                   <div className='client__container'>
                     <BsFillPatchCheckFill className='client__icon' />
                     <h4>{group.title}</h4>
@@ -94,7 +78,7 @@ const Portfolio = React.forwardRef((_, ref) => {
                       </div>
                     )
                   })}
-                </>
+                </div>
               )
             })}
           </div>

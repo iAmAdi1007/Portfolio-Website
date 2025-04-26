@@ -4,37 +4,11 @@ import ME from '../../../assets/about.png';
 import { FiAward } from 'react-icons/fi';
 import { FaUsers } from 'react-icons/fa';
 import { GoDotFill } from 'react-icons/go';
-import { VscFolderLibrary } from 'react-icons/vsc'
+import { VscFolderLibrary } from 'react-icons/vsc';
+import data from '../../../data.json';
 
 const About = forwardRef((_, ref) => {
-
-  const CERTIFICATES_ARRAY = [
-    {
-      title: "FE Developer",
-      link: "https://www.hackerrank.com/certificates/cf0d1f915dfc"
-    },
-    {
-      title: "Frontend Expert",
-      link: "https://certificate.algoexpert.io/FE-9d87f33d48"
-    },
-    {
-      title: "React JS",
-      link: "https://www.hackerrank.com/certificates/ba7c8d779d4d"
-    },
-    {
-      title: "JavaScript Basics",
-      link: "https://www.hackerrank.com/certificates/cd300095bd06"
-    },
-    {
-      title: "Problem Solving",
-      link: "https://www.hackerrank.com/certificates/9f04c57f4f14"
-    },
-    {
-      title: "Product Developer",
-      link: "https://www.linkedin.com/in/aditya-pratap-81063a107/overlay/1635522560742/single-media-viewer/?profileId=ACoAABr38wwBHzEUJ2Uoz43N7o16Mz7mp2-6VB8"
-    }
-  ]
-
+  const CERTIFICATES_ARRAY = data.certificates;
   return (
     <section id="about" ref={ref}>
       <h5>Get to Know</h5>

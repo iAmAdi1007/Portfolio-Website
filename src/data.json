@@ -1,0 +1,119 @@
+{
+    "userName": "Aditya Pratap",
+    "certificates": [
+        {
+            "title": "FE Developer",
+            "link": "https://www.hackerrank.com/certificates/cf0d1f915dfc"
+        },
+        {
+            "title": "Frontend Expert",
+            "link": "https://certificate.algoexpert.io/FE-9d87f33d48"
+        },
+        {
+            "title": "React JS",
+            "link": "https://www.hackerrank.com/certificates/ba7c8d779d4d"
+        },
+        {
+            "title": "JavaScript Basics",
+            "link": "https://www.hackerrank.com/certificates/cd300095bd06"
+        },
+        {
+            "title": "Problem Solving",
+            "link": "https://www.hackerrank.com/certificates/9f04c57f4f14"
+        },
+        {
+            "title": "Product Developer",
+            "link": "https://www.linkedin.com/in/aditya-pratap-81063a107/overlay/1635522560742/single-media-viewer/?profileId=ACoAABr38wwBHzEUJ2Uoz43N7o16Mz7mp2-6VB8"
+        }
+    ],
+    "projectWork": [
+        {
+            "title": "For VERIZON",
+            "items": [
+                "Worked on Page load optimization through Indexed DB approach to cater to multiple device load on the screen to improved user experience.",
+                "Worked pro actively with Backend Team in API design discussion and contract finalization to ensure reduced page load times as well as secured endpoints.",
+                "Worked on improving SRE(Site Reliability Engineering) score for the application through Next JS SSR(Server-Side Rendering) capabilities."
+            ]
+        },
+        {
+            "title": "For APPLE",
+            "items": [
+                "Developed and implemented dynamic forms for the application, ensuring alignment with both business and technical requirements.",
+                "Developed real time change of Feature Flags through dev tools to test various retailers on-the-go."
+            ]
+        }
+    ],
+    "professionTexts": [
+        "Front-End Developer",
+        "Web Developer",
+        "UI Developer"
+    ],
+    "skills": [
+        {
+          "skill": "React JS",
+          "proficiency": "Experienced"
+        },
+        {
+          "skill": "Next JS",
+          "proficiency": "Intermediate"
+        },
+        {
+          "skill": "Javascript",
+          "proficiency": "Experienced"
+        },
+        {
+          "skill": "Typescript",
+          "proficiency": "Experienced"
+        },
+        {
+          "skill": "Redux Toolkit",
+          "proficiency": "Intermediate"
+        },
+        {
+          "skill": "React / Tanstack Query",
+          "proficiency": "Intermediate"
+        },
+        {
+          "skill": "Tailwind CSS",
+          "proficiency": "Intermediate"
+        },
+        {
+          "skill": "HTML5",
+          "proficiency": "Experienced"
+        }
+      ],
+    "otherSkills":[
+        {
+          "skill": "Data Structures",
+          "proficiency": "Intermediate"
+        },
+        {
+          "skill": "Algorithms",
+          "proficiency": "Intermediate"
+        },
+        {
+          "skill": "Jest",
+          "proficiency": "Intermediate"
+        },
+        {
+          "skill": "React Testing Library",
+          "proficiency": "Intermediate"
+        },
+        {
+          "skill": "Webpack",
+          "proficiency": "Intermediate"
+        },
+        {
+          "skill": "Cypress JS",
+          "proficiency": "Beginner"
+        },
+        {
+          "skill": "Node JS",
+          "proficiency": "Intermediate"
+        },
+        {
+          "skill": "Git",
+          "proficiency": "Experienced"
+        } 
+      ]
+}

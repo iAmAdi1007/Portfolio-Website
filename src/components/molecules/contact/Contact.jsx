@@ -17,6 +17,10 @@ const Contact = forwardRef((_, ref) => {
       .then((result) => {
         console.log(result.text);
         setShowNotification(true);
+        ref.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
       }, (error) => {
         console.log(error.text);
       });
@@ -29,7 +33,7 @@ const Contact = forwardRef((_, ref) => {
       <h2>Contact Me</h2>
 
       <div className="container contact__container">
-        {showNotification && 
+        {showNotification &&
           <Notification
             title={'Success!'}
             message={'Email Sent Sucessfully!'}
